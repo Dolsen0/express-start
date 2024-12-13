@@ -7,7 +7,7 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 
 const corsOptions = {
-    origin: 'http://localhost:3000',
+    origin: 'http://localhost:3000',  // Used for development - Please change this to your domain
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type', 'Authorization'],
   };
@@ -19,8 +19,12 @@ connectToDb();
 
 app.use(express.json());
 
-app.use('/users', userRoutes);
+app.get('/', (req, res) => {
+    res.send('Welcome to Express Start.');
+  }
+);
 
+app.use('/users', userRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is running on  http://localhost:${PORT}`);

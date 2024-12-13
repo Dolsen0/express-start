@@ -1,14 +1,14 @@
 {
-  "name": "backend",
+  "name": "express-start",
   "type": "module",
   "version": "1.0.0",
-  "description": "",
+  "description": "A reusable backend template for Node.js projects",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
-  "author": "",
+  "author": "Derek Olsen",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",

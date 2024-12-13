@@ -10,12 +10,10 @@ const userSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-// Instance method to compare passwords
 userSchema.methods.verifyPassword = async function (password) {
   return await bcrypt.compare(password, this.password);
 };
 
-// Exclude password from JSON responses
 userSchema.methods.toJSON = function () {
   const user = this.toObject();
   delete user.password;
